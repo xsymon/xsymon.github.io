@@ -1,74 +1,82 @@
 <html>
     <head>
-        <title>Meteo</title>
+        <title>Esercizio 5</title>
         <!--CSS aggiuntivo-->
-        <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     </head>
     <body>
-        <div class="container-fluid dashboard">
-            <div id="header" class="row">
+        <div class="main">
+            <div class="first-page">
+                <video width="100%" height="90%" autoplay="true">
+                    <source src="video/Sopra Video.mp4" type="video/mp4">
+                </video>
+            </div>
 
-                <div class="col-md-2 col-xs-10">
-                    <div class="input-group">
-                        <input type="text" id="search-input" class="form-control" placeholder="Search for city">
-                        <span class="input-group-btn">
-                            <button id="search-button" class="btn btn-default" type="button">Search</button>
-                        </span>
+            <div class="second-page">
+                <div class="owl-carousel">
+                    <div class="item"><img src="img/img1.png" alt="Owl Image"></div>
+                    <div class="item"><img src="img/img2.png" alt="Owl Image"></div>
+                    <div class="item"><img src="img/img3.png" alt="Owl Image"></div>
+                </div>
+            </div>
+
+            <div class="third-page">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/hNxiIZ4k_6Q?rel=0" frameborder="0" allow="autoplay; encrypted-media" preload="metadata" allowfullscreen></iframe>
+            </div>
+
+            <div class="fourth-page">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+
+                  <!-- Indicators -->
+                  <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                  </ul>
+
+                  <!-- The slideshow -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/img1.png" alt="Image 1">
                     </div>
-                </div>
+                    <div class="carousel-item">
+                      <img src="img/img2.png" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/img3.png" alt="Image 3">
+                    </div>
+                  </div>
 
-                <div class="col-md-1 col-xs-2">
-                    <span class="input-group-btn">
-                        <button id="location-button" class="btn btn-default" type="button">
-                            <i class="fas fa-globe"></i>
-                        </button>
-                    </span>
-                </div>
-
-                <div class="col-md-5 col-xs-12">
-                    <h1 id="title" class="text-center"></h1>
-                </div>
-
-                <div class="col-md-1 col-xs-2 ">
-                    <input id="lang-switch" type="checkbox" checked data-toggle="toggle" data-onstyle="default">
-                </div>
-
-                <div class="col-md-1 col-xs-2 ">
-                    <input id="unit-switch" type="checkbox" checked data-toggle="toggle" data-onstyle="default">
-                </div> 
-
-            </div>
-
-            <div class="row">
-                <div class="col-md-7 col-md-offset-2 col-xs-12">
-                    <h3 class="text-center" id="description"></h3>
+                  <!-- Controls -->
+                  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3 col-md-offset-4 col-xs-12 " id="main-box">
-                    <script id="template" type="x-tmpl-mustache">
-                            <span id="temp">{{temp}}:{{value1}}{{unitMarker}}</span><br>
-                            <span id="pressure">{{pressure}}:{{value2}}{{unitMarker}}</span><br>
-                            <span id="humidity">{{humidity}}:{{value3}}{{unitMarker}}</span><br>
-                            <span id="min_temp">{{min_temp}}:{{value4}}{{unitMarker}}</span><br>
-                            <span id="max_temp">{{max_temp}}:{{value5}}{{unitMarker}}</span><br>                 
-                    </script>  
+
+            <div class="fifth-page">
+                <div class="count-box text-center">
+                    <h1 class="count-date"></h1>
                 </div>
             </div>
+
         </div>
+
         <footer>
             <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-            <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-            <script src="mustache.js-master/mustache.js-master/mustache.js"></script>
-            <script src="RestModule.js"></script>
-            <script src="WeatherService.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
             <script src="script.js"></script>
         </footer>
+
     </body>
 </html>
