@@ -1,8 +1,9 @@
 var settings = {
-	items : 2,
-	navigaton:true,
+	autoplay:true,
+	items : 3,
 	loop:true,
-	margin:2
+	autoplayHoverPause:true,
+	checkVisible:false
 }
 
 $(".owl-carousel").owlCarousel(settings);
