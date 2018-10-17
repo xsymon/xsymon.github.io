@@ -1,6 +1,5 @@
 .first-page,
 .third-page,
-.fourth-page,
 .fifth-page{
 	height:100vh;
 	width:100vw;
@@ -19,11 +18,12 @@
 	padding:1%;
 }
 .fourth-page{
+	width:100vw;
 	background-color:#5c6bc0; 
 	padding:10%;
 }
 .fifth-page{
-padding:20%;
+	padding:20%;
 }
 
 .count-box{
@@ -70,13 +70,3 @@ padding:20%;
 }
 
 
-/*.circle{
-	height:10vh;
-	width:5vw;
-	border-radius: 200%;
-	background-color:white;
-	border:1px solid #039be5;
-	box-shadow: none;
-	transition: box-shadow 	0.3s;
-	padding:2%;
-}*/
