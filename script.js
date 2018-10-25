@@ -1,29 +1,67 @@
-var settings = {
-	autoplay:true,
-	items : 3,
-	loop:true,
-	autoplayHoverPause:true,
-	checkVisible:false
-}
+//Controllo comparsa e scomparsa del banner di sconto di inizio pagina
+fixedBarHeight = $("#fixed-bar").height();
 
-$(".owl-carousel").owlCarousel(settings);
-window.scrollTo(0,0);
+$banner = $("#discount-banner");
+$(window).scroll(function(){
+	if($(document).scrollTop()==0){
+		$banner.insertBefore('#fixed-bar');
+		$('#offer-hero').css('paddingTop','unset');
+		$('#fixed-bar').css('position','static');
+	}else{
+		$('#offer-hero').css('paddingTop',fixedBarHeight);
+		$('#discount-banner').remove();
+		$('#fixed-bar').css('position','fixed');
+	}
+});
 
-$('.count-box').countdown('2019/01/01', function(event) {
-  $(".count-box h1").text(event.strftime('%D Giorni %H:%M:%S'));
+//Controlla l'apparizione della barra blu nel div dell'offerta cliccata sotto l'hero
+$("#offer-nav > div").click(function(event){
+	$("#offer-nav > div").removeClass("selected");
+	$(this).addClass("selected");
+});
 
-}).on('update.countdown',function(){
-  	$(".count-box").css('box-shadow','4px 3px 77px 9px rgba(129,212,250,1)');
-  	setTimeout(()=>{
-  		$(".count-box").css('box-shadow','none');
-  	},900);
-  })
+const carousel = new Siema({
+	selector: '.siema',
+  	duration: 200,
+  	easing: 'ease-out',
+  	perPage: 1,
+  	startIndex: 0,
+  	draggable: true,
+  	multipleDrag: true,
+  	threshold: 20,
+  	loop: false,
+  	rtl: false
+});
+$(".prev").on('click',()=>{
+	carousel.prev();
+});
+$(".next").on('click',()=>{
+	carousel.next();
+});
 
-  /*
-  $(".circle").css('box-shadow','4px 3px 77px 9px rgba(129,212,250,1)');
-  setTimeout(function(){
-  	$(".circle").css('box-shadow','none');
-  },1000);*/
+const carousel2 = new Siema({
+	selector: '.siema2',
+  	duration: 200,
+  	easing: 'ease-out',
+  	perPage: 5,
+  	startIndex: 0,
+  	draggable: true,
+  	multipleDrag: true,
+  	threshold: 20,
+  	loop: false,
+  	rtl: false
+});
 
-
+const carousel3 = new Siema({
+	selector: '.siema3',
+  	duration: 200,
+  	easing: 'ease-out',
+  	perPage: 5,
+  	startIndex: 0,
+  	draggable: true,
+  	multipleDrag: true,
+  	threshold: 20,
+  	loop: false,
+  	rtl: false
+});
 
